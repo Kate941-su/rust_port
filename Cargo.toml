@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.4.1"
+diesel = "2.1.4"
+tera = "1.19.1"
+actix-files = "0.6.5"

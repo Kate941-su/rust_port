@@ -1,35 +1,28 @@
-use actix_web::{web, App, HttpServer, Responder, get, post};
+use actix_files as fs;
+use actix_web::{web, App, HttpServer, Responder, get, post, HttpResponse};
+use tera::Tera;
 
 struct AppState {
     app_name: String,
 }
 
-#[get("/")]
-async fn index(data: web::Data<AppState>) -> String {
-    let app_name = &data.app_name;
-    format!("Hello {app_name}!")
-}
+async fn index(tera: web::Data<Tera>) -> impl Responder {
+    let mut context = tera::Context::new();
+    context.insert("name", &"John Doe");
 
+    let rendered = tera.render("index.html", &context).expect("Error rendering template");
 
-
-async fn index_test() -> impl Responder {
-    "Hello world! I'm Kaito!!"
+    HttpResponse::Ok().body(rendered)
 }
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| {
-        // App::new().service(
-        //     // prefixes all resources and routes attached to it...
-        //     web::scope("/app")
-        //         // ...so this handles requests for `GET /app/index.html`
-        //         .route("/index.html", web::get().to(index)),
-        // )
-
-        // You will be able to see Hello Actix Web!
-        App::new().app_data(web::Data::new(AppState{
-            app_name: String::from("Actix Web"),
-        })).service(index)
+    let tera = Tera::new("template/**/*").expect("Error parsing templates");
+    HttpServer::new(move || {
+        App::new().app_data(web::Data::new(tera.clone()))
+            // fs::Files::new("{mount_point}", "{relative directory}")
+            .service(fs::Files::new("/static", "./static").show_files_listing())
+            .route("/", web::get().to(index))
     })
         .bind(("127.0.0.1", 8080))?
         .run()
