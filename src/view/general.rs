@@ -20,7 +20,7 @@ pub async fn not_found(tera: Data<Tera>) -> impl Responder {
     let mut context = tera::Context::new();
     let rendered = tera.render("404.html", &context);
     match rendered {
-        Ok(..) => HttpResponse::Ok().body(rendered.unwrap()),
+        Ok(..) => HttpResponse::NotFound().body(rendered.unwrap()),
         // TODO: Show the error message.
         Err(..) => panic!("Tera rendering could not execute.")
     }

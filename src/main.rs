@@ -18,8 +18,8 @@ async fn main() -> std::io::Result<()> {
             .service(fs::Files::new("/static", "./static").show_files_listing())
             .service(web::scope("/")
                 .route("", web::get().to(view::general::index))
-                .default_service(web::route().to(view::general::not_found))
             )
+            .default_service(web::route().to(view::general::not_found))
     })
         .bind(("127.0.0.1", 8080))?
         .run()
