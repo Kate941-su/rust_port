@@ -3,8 +3,8 @@ use actix_web::{web, App, HttpServer, Responder, get, post, HttpResponse};
 use actix_web::web::resource;
 use tera::Tera;
 
-// Self modules
-mod view;
+
+use port_rust::view;
 
 struct AppState {
     app_name: String,

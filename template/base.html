@@ -1,95 +1,135 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% block title %}{% endblock title %}
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="http://html5-templates.com/"/>
-    <link rel="apple-touch-icon" href="../static/img/apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="stylesheet" href="../static/css/style.css">
-    {% block css %}{% endblock css %}
-    {% block js %}{% endblock js %}
-    <script src="../static/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
+{% block title %}{% endblock title %}
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../static/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="../static/assets/css/templatemo-style.css" />
+    <link rel="stylesheet" href="../static/assets/css/owl.css" />
+    <link rel="stylesheet" href="../static/assets/css/lightbox.css" />
+    {% block additional_css %}{% endblock additional_css %}
 </head>
-<body>
 
-<div class="wrapAll clearfix">
-    <div class="sidebar">
-        <div class="logo">
-            <a href="/"><img src='../static/img/logo.png' alt="logo"></a>
+<body background="../static/assets/images/page-bg.jpg">
+<div id="page-wraper">
+    <!-- Sidebar Menu -->
+    <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+            <i class="fa fa-times" id="menu-close"></i>
+            <div class="container">
+                <div class="image">
+                    <a href="#"><img src="../static/assets/images/author-image.jpg" alt="" /></a>
+                </div>
+                <div class="author-content">
+                    <h4>Reflux Me</h4>
+                    <span>Web Designer</span>
+                </div>
+                <nav class="main-nav" role="navigation">
+                    <ul class="main-menu">
+                        <li><a href="#section1">About Me</a></li>
+                        <li><a href="#section2">What I’m good at</a></li>
+                        <li><a href="#section3">My Work</a></li>
+                        <li><a href="#section4">Contact Me</a></li>
+                    </ul>
+                </nav>
+                <div class="social-network">
+                    <ul class="soial-icons">
+                        <li>
+                            <a href="https://fb.com/templatemo"
+                            ><i class="fa fa-facebook"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-rss"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright-text">
+                    <p>Copyright 2019 Reflux Design</p>
+                </div>
+            </div>
         </div>
-<!--        <div class="navigation">-->
-<!--            <ul>-->
-<!--                <li><a href="#">Main page</a></li>-->
-<!--                <li><a href="#">Contents</a></li>-->
-<!--                <li><a href="#">Featured content</a></li>-->
-<!--            </ul>-->
-<!--            <h3>Interaction</h3>-->
-<!--            <ul>-->
-<!--                <li><a href="#">Help</a></li>-->
-<!--                <li><a href="#">About</a></li>-->
-<!--                <li><a href="#">Portal</a></li>-->
-<!--            </ul>-->
-<!--            <h3>Interaction</h3>-->
-<!--            <ul>-->
-<!--                <li><a href="#">Help</a></li>-->
-<!--                <li><a href="#">About</a></li>-->
-<!--                <li><a href="#">Portal</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
     </div>
-    <div class="mainsection">
-        <div class="headerLinks">
-            <span class="user">Not logged in</span> <a href="#">Talk</a> <a href="#">Contributions</a> <a href="#">Create
-            account</a> <a href="#">Log in</a>
-        </div>
-        <div class="tabs clearfix">
-            <div class="tabsLeft">
-                <ul>
-                    <li><a href="#" class="active">Article</a></li>
-                    <li><a href="#">Talk</a></li>
-                </ul>
-            </div>
-            <div id="simpleSearch">
-                <input type="text" name="searchInput" id="searchInput" placeholder="Search Wikipedia" size="12"/>
-                <div id="submitSearch"></div>
-            </div>
-            <div class="tabsRight">
-                <ul>
-                    <li><a href="#" class="active">Read</a></li>
-                    <li><a href="#">View source</a></li>
-                    <li><a href="#">View history</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-
-        {% block test %}{% endblock test %}
-
-
-        <div class="pagefooter">
-            This page was last edited on 29.07.2017 | Template by <a href="http://html5-templates.com/" target="_blank"
-                                                                     rel="nofollow">HTML5 Templates</a>
-            <!-- Please leave this link unchanged -->
-            <div class="footerlinks">
-                <a href="#">Privacy policy</a> <a href="#">About</a> <a href="#">Terms and conditions</a> <a href="#">Cookie
-                statement</a> <a href="#">Developers</a>
-            </div>
-        </div>
-
-
-    </div>
+    {% block contents %}{% endblock contents %}
 </div>
 
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="../static/vendor/jquery/jquery.min.js"></script>
+<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-<script src="../static/js/script.js"></script>
+<script src="../static/assets/js/isotope.min.js"></script>
+<script src="../static/assets/js/owl-carousel.js"></script>
+<script src="../static/assets/js/lightbox.js"></script>
+<script src="../static/assets/js/custom.js"></script>
+{% block script %}{% endblock script %}
+<script>
+    //according to loftblog tut
+    $(".main-menu li:first").addClass("active");
 
+    var showSection = function showSection(section, isAnimate) {
+        var direction = section.replace(/#/, ""),
+            reqSection = $(".section").filter(
+                '[data-section="' + direction + '"]'
+            ),
+            reqSectionPos = reqSection.offset().top - 0;
 
+        if (isAnimate) {
+            $("body, html").animate(
+                {
+                    scrollTop: reqSectionPos
+                },
+                800
+            );
+        } else {
+            $("body, html").scrollTop(reqSectionPos);
+        }
+    };
+
+    var checkSection = function checkSection() {
+        $(".section").each(function() {
+            var $this = $(this),
+                topEdge = $this.offset().top - 80,
+                bottomEdge = topEdge + $this.height(),
+                wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+                var currentId = $this.data("section"),
+                    reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+                reqLink
+                    .closest("li")
+                    .addClass("active")
+                    .siblings()
+                    .removeClass("active");
+            }
+        });
+    };
+
+    $(".main-menu").on("click", "a", function(e) {
+        e.preventDefault();
+        showSection($(this).attr("href"), true);
+    });
+
+    $(window).scroll(function() {
+        checkSection();
+    });
+</script>
 </body>
 </html>
